@@ -110,11 +110,20 @@
     //
     // test if a specific column on this board contains a conflict
     hasColConflictAt: function(colIndex) {
+      console.log(colIndex);
       return false; // fixme
     },
 
     // test if any columns on this board contain conflicts
     hasAnyColConflicts: function() {
+      var n = this.get('n');
+      // board is NxN 
+      for (var i = 0; i < n; i++) {
+        // pass in index 
+        if (this.hasColConflictAt(i)) {
+          return true;
+        }
+      }
       return false; 
     },
 
