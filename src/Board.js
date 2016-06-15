@@ -148,15 +148,13 @@
         for (var j = 0; j < n; j++) {
           // if this is the diagonal position of what we're searching
           if (this._getFirstRowColumnIndexForMajorDiagonalOn(i, j) === majorDiagonalColumnIndexAtFirstRow) {
-            // console.log(i, j);
             if (board[i][j]) {
               count++;
             }
           }
         }
       }
-      // console.log(count);
-      console.log(count > 1);
+
       return count > 1; // fixme
     },
 
@@ -164,7 +162,7 @@
     hasAnyMajorDiagonalConflicts: function() {
       var n = this.get('n');
       for (var i = 0 - (n - 2); i < n - 2; i++) {
-        // testing 0,1,2,3 which is the major diag 
+        // if 4x4, testing -2, -1, 0, 1, 2 diagonal  based on col - row
         if (this.hasMajorDiagonalConflictAt(i)) {
           return true;
         }
