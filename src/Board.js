@@ -79,9 +79,8 @@
     //
     // test if a specific row on this board contains a conflict
     hasRowConflictAt: function(row) {
-      // gets an array, determine if there is a conflict
+      // check each subarray if there is a collision
       var count = 0;
-      // console.log('rowww', row);
       for (var i = 0; i < row.length; i++) {
         if (row[i]) {
           count++;
@@ -92,10 +91,10 @@
 
     // test if any rows on this board contain conflicts
     hasAnyRowConflicts: function() {
-      var n = this.get('n');
       var board = this.rows();
+      // board is array of arrays
       for (var i = 0; i < board.length; i++) {
-        // console.log(board.get(i));
+        // loop over each subarray and check if it has conflict
         if (this.hasRowConflictAt(board[i])) {
           return true;
         }
